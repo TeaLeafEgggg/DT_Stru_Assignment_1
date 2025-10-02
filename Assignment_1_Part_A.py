@@ -4,3 +4,5 @@
 user_input_items = input("Enter items separated by spaces: ")
 item_list = user_input_items.split()
 print(item_list)
+postfix_list = []
+operator_stack = []
