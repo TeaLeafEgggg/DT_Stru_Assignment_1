@@ -135,27 +135,27 @@ def eval_postfix(postExp): # Evaluate postfix expression
             stack.push(float(token))  # Push as float
         elif token in '+-*/^':  # Operator
             if stack.is_empty():
-                raise ValueError("Invalid postfix expression")
+                raise ValueError("Invalid postfix expression") # Check for sufficient operands
             b = stack.pop()  # Second operand
-            if stack.is_empty():
-                raise ValueError("Invalid postfix expression")
+            if stack.is_empty(): 
+                raise ValueError("Invalid postfix expression") # Check for sufficient operands
             a = stack.pop()  # First operand
             if token == '+':
-                result = a + b
-            elif token == '-':
-                result = a - b
+                result = a + b # Perform addition
+            elif token == '-':  
+                result = a - b # Perform subtraction
             elif token == '*':
-                result = a * b
-            elif token == '/':
-                result = a / b
+                result = a * b # Perform multiplication
+            elif token == '/': 
+                result = a / b # Perform division
             elif token == '^':
-                result = a ** b
+                result = a ** b # Perform exponentiation
             stack.push(result)  # Push result
         step['Stack'] = ' '.join(str(x) for x in stack.items) if not stack.is_empty() else ''  # Update stack in step
         steps.append(step)  # Append step for visualization
 
     if stack.is_empty():
-        raise ValueError("Invalid postfix expression")
+        raise ValueError("Invalid postfix expression") # Final check for valid expression
     result = stack.pop()  # Final result
 
     # Visualize evaluation steps
