@@ -1,9 +1,16 @@
-# INT3086 Assignment 1 Part B
-# Oscar Ng Cheuk Hau 11558129 
-# Infix to Postfix Converter and Postfix Evaluator using Custom Stack ADT
+# ============================================================================================ #
+# INT3086 Assignment 1 Part B                                                                  #
+# Oscar Ng Cheuk Hau 11558129                                                                  #
+# Infix to Postfix Converter and Postfix Evaluator using Custom Stack ADT                      #
+# There are calculation limitation to the evaluator.                                           #
+# The current tested largest value will be 4^4^4 = 1.3407807929942597e+154                     #
+# ============================================================================================ #
 
 from prettytable import PrettyTable  # Import PrettyTable module to create a table for better visualization of the output 
-# ("pip install prettytable" is needed in the terminal when running the program for the first time)
+# For Window OS ("pip install prettytable" is needed in the terminal when running the program for the first time)
+# For Window OS prettytable update: "pip install --upgrade prettytable" is needed in the terminal
+# For Linux/Mac OS, use "pip3 install prettytable" instead
+# For Linux/Mac OS prettytable update: "pip3 install --upgrade prettytable" instead 
 
 class Stack: # Custom Stack ADT implementation
     """
